@@ -31,4 +31,4 @@ elem = driver.find_element_by_id("channel-section").click()
 
 
 
-print("Test completed succesfully")
+print("Test completed succesful ly")
