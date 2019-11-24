@@ -1,13 +1,11 @@
 from selenium import webdriver
+from selenium.webdriver.common.action_chains import ActionChains
 import time
 from selenium.webdriver.common.keys import Keys
-from selenium.webdriver.common.action_chains import ActionChains
+
 
 driver = webdriver.Chrome(r"..\drivers\chromedriver.exe")
-#driver = webdriver.edge(r"..\drivers\msedgedriver.exe")
-
-# FONCTIONNEMENT DE LA RECHERCHE VIA GOOGLE, tout peut se faire remplacer en mettant driver.get("youtube')
-
+#
 # driver.set_page_load_timeout(10)
 # driver.get("https://www.google.fr/") #Aller chercher google.fr
 # driver.find_element_by_name("q").send_keys("Youtube")  # q = barre de recherche
@@ -17,11 +15,16 @@ driver = webdriver.Chrome(r"..\drivers\chromedriver.exe")
 driver.get("https://www.youtube.com/?hl=fr&gl=FR")
 
 driver.find_element_by_name("search_query").send_keys("Squeezie")
-time.sleep(2)
 driver.find_element_by_class_name("style-scope ytd-searchbox").send_keys(Keys.ENTER)
+time.sleep(2)
+elem = driver.find_element_by_id("channel-section").click()
+# elem[151].click()
+
+# for index,value in enumerate (elem) :
+#     print (str(index)+", "+value.text)
+#elem[0].click()
+#ActionChains(driver).move_to_element(elem[0]).click(button_sub).perform()
+#content = driver.find_element_by_css_selector('a.yt-simple-endpoint').click()
+
 #driver.maximize_window()
-driver.find_element_by_class_name("style-scope ytd-channel-name").click()
-
-
-print("test completed succesfully")
-
+print("Test completed succesfully")
