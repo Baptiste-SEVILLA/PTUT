@@ -6,13 +6,17 @@ import tkinter.ttk as ttk
 
 fenetre = Tk()
 
-Liste = ttk.Combobox(fenetre, values=["Squeezie", "Amixem", "Cyprien", "Zerator"])
+
+#Liste youtubeurs
+Liste = ttk.Combobox(fenetre, values=["Squeezie", "Cyprien", "Norman", "Amixem"])
 Liste.pack ()
 
-def print_file () :  # voir le chapitre sur les événements
-    print(Liste.get())
+#Ajout / affichage liste
+def print_file () :
+    print(Liste.get()) #bouton fleche
 
-bListe = tkinter.Button (fenetre, text="print")
+#ajouter a la liste
+bListe = tkinter.Button (fenetre, text="Ajouter")
 bListe.config (command = print_file)         # idem
 bListe.pack ()
 
